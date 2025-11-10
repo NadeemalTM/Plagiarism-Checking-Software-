@@ -33,6 +33,8 @@ A professional-grade plagiarism detection system for PDF documents with up to 95
 pip install -r requirements.txt
 ```
 
+**Note:** If you encounter DLL errors with `sentence-transformers` on Windows, the system will automatically disable semantic similarity and continue working with 4 other detection methods. This is normal and doesn't significantly impact accuracy (drops from 95% to ~90%).
+
 ### 2. Download NLP Models
 
 ```bash

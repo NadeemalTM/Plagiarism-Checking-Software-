@@ -22,9 +22,11 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 try:
     from sentence_transformers import SentenceTransformer
     SENTENCE_TRANSFORMERS_AVAILABLE = True
-except ImportError:
+except (ImportError, OSError) as e:
     SENTENCE_TRANSFORMERS_AVAILABLE = False
-    print("Warning: sentence-transformers not available. Semantic similarity will be limited.")
+    print(f"Warning: sentence-transformers not available. Semantic similarity will be limited.")
+    print(f"Reason: {type(e).__name__}")
+    # This is fine - the system will still work with other detection methods
 
 
 @dataclass
@@ -104,10 +106,13 @@ class PlagiarismDetector:
         if SENTENCE_TRANSFORMERS_AVAILABLE:
             try:
                 self.sentence_model = SentenceTransformer('all-MiniLM-L6-v2')
-            except:
+                print("✓ Semantic similarity (BERT) enabled")
+            except Exception as e:
                 self.sentence_model = None
+                print(f"Note: Could not load BERT model: {type(e).__name__}")
         else:
             self.sentence_model = None
+            print("Note: Running without semantic similarity (4 detection methods active)")
         
         self.reference_database = []
     
