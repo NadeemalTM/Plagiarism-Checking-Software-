@@ -49,7 +49,30 @@ nltk.download('stopwords')
 
 ## Usage
 
-### Basic Usage
+### Graphical User Interface (GUI) - Recommended for Most Users
+
+**Launch the GUI application:**
+
+```bash
+python plagiarism_checker_gui.py
+```
+
+**OR double-click:**
+- `start_gui.bat` (Windows)
+- `run_gui.py` (Cross-platform)
+
+**GUI Features:**
+- 🖱️ Easy-to-use graphical interface
+- 📁 Browse and select files visually
+- 📊 Real-time progress tracking
+- 📈 Visual results display
+- 💾 One-click report generation
+- ⚙️ Interactive settings
+- 📋 Multiple tabs for organized workflow
+
+### Command-Line Interface (CLI) - For Advanced Users
+
+**Basic Usage:**
 
 ```bash
 python plagiarism_checker.py --file document.pdf
