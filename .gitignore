@@ -1,0 +1,50 @@
+# PDF Plagiarism Checker
+# Professional-grade plagiarism detection system
+
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports
+reports/
+*.html
+*.json
+report_*.txt
+report_*.md
+
+# Test files
+test_pdfs/
+sample_*.pdf
+
+# NLTK data (downloaded separately)
+nltk_data/
+
+# Model cache
+.cache/
+models/
+
+# Temp files
+*.tmp
+temp/
